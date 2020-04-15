@@ -36,7 +36,7 @@ public class SwaggerConfig extends WebMvcConfigurationSupport {
                 "API for demonstrating REST traced with Jaeger.",
                 "1.0",
                 "",
-                new Contact("Eric Goebelbecker", "http://www.ericgoebelbecker.com", "eric@ericgoebelbecker.com"),
+                new Contact("Ganesh Gowtham", "https://sites.google.com/site/ganeshgowtham/", "@gmail.com"),
                 "", "");
     }
 
