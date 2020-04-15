@@ -1,6 +1,5 @@
 package com.github.ganeshgowtham.jaeger.controller;
 
-import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 import com.github.ganeshgowtham.jaeger.model.MessageFormat;
 import com.github.ganeshgowtham.jaeger.model.Payment;
 import com.github.ganeshgowtham.jaeger.service.PaymentsService;
@@ -37,18 +36,18 @@ public class PaymentsController {
         paymentsService.addPayment(
                 Payment.builder().uetr(UUID.randomUUID().toString()).
                         bearerAccountNo("ac1").bearerName("BillGates").
-                        beneficiaryAccountNo("acc1").beneficiaryName("Satya").format(MessageFormat.ACH).build(),null);
+                        beneficiaryAccountNo("acc1").beneficiaryName("Satya").format(MessageFormat.ACH).build(), null);
 
         paymentsService.addPayment(
                 Payment.builder().uetr(UUID.randomUUID().toString()).
                         bearerAccountNo("ac2").bearerName("JackMa").
-                        beneficiaryAccountNo("acc2").beneficiaryName("Wohai").format(MessageFormat.MTC).build(),null);
+                        beneficiaryAccountNo("acc2").beneficiaryName("Wohai").format(MessageFormat.MTC).build(), null);
 
         paymentsService.addPayment(
                 Payment.builder().uetr(UUID.randomUUID().toString()).
                         bearerAccountNo("ac3").bearerName("Narayan").
-                        beneficiaryAccountNo("acc3").beneficiaryName("Moorthy").format(MessageFormat.PAIN).build(),null);
-log.info("Added dummy payments {}", paymentsService.getAllPayments(null).size());
+                        beneficiaryAccountNo("acc3").beneficiaryName("Moorthy").format(MessageFormat.PAIN).build(), null);
+        log.info("Added dummy payments {}", paymentsService.getAllPayments(null).size());
     }
 
     @ApiOperation(value = "Get All Payments ", response = ResponseEntity.class)
@@ -67,7 +66,7 @@ log.info("Added dummy payments {}", paymentsService.getAllPayments(null).size())
         Span span = tracer.buildSpan("create payment").start();
         log.info("Receive Request to add payment {}", payment);
         payment.setUetr(UUID.randomUUID().toString());
-        paymentsService.addPayment(payment,span);
+        paymentsService.addPayment(payment, span);
         span.setTag("http.status_code", 200);
         span.finish();
         return new ResponseEntity(payment, HttpStatus.OK);

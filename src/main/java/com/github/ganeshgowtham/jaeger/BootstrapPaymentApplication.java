@@ -13,7 +13,6 @@ import org.springframework.context.annotation.Bean;
 public class BootstrapPaymentApplication {
 
     public static void main(String[] args) {
-
         ApplicationContext context = SpringApplication.run(BootstrapPaymentApplication.class, args);
         log.info("TutorialApplication started");
     }
@@ -22,7 +21,7 @@ public class BootstrapPaymentApplication {
     public static JaegerTracer getTracer() {
         Configuration.SamplerConfiguration samplerConfig = Configuration.SamplerConfiguration.fromEnv().withType("const").withParam(1);
         Configuration.ReporterConfiguration reporterConfig = Configuration.ReporterConfiguration.fromEnv().withLogSpans(true);
-        Configuration config = new Configuration("jaeger tutorial").withSampler(samplerConfig).withReporter(reporterConfig);
+        Configuration config = new Configuration("Payments Application").withSampler(samplerConfig).withReporter(reporterConfig);
         return config.getTracer();
     }
 }

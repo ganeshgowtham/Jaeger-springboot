@@ -20,9 +20,11 @@ public class PaymentsService {
         if (rootSpan != null) {
             Span span = tracer.buildSpan("service get payment").asChildOf(rootSpan).start();
             allPayments.add(payment);
-            span.setTag("uetr",payment.getUetr());
+            span.setTag("uetr", payment.getUetr());
             span.finish();
-        }else{allPayments.add(payment);}
+        } else {
+            allPayments.add(payment);
+        }
     }
 
     public List<Payment> getAllPayments(Span rootSpan) {
