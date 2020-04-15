@@ -1,1 +1,13 @@
-# Jaeger-springboot
+# Jaeger Sample using the Springboot
+
+Quick and dirty Spring Boot project with some basic Jaeger tracing enabled.
+
+Use gradle build copyLocal to run from local subdirectory.
+
+Use gradele build copyDeps to run in container. Build image in docker subdirectory.
+
+###### Docker Jaeger installation 
+docker run -d --name jaeger -p 16686:16686 -p 6831:6831/udp jaegertracing/all-in-one:1.9
+
+Above docker image uses non production image (all-in-one) data gets stored in in-memory rather than casandra or ES
+Access UI @ http://localhost:16686/search
