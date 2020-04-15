@@ -21,3 +21,6 @@ Jaeger Screenshots
 ![](images/with-delay-spans.JPG)
 ![](images/without-delay-spans.JPG)
 
+Scaling Jaegar
+1. https://www.youtube.com/watch?v=tFZAHWl8y_I
+
