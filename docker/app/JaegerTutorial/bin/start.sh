@@ -1,6 +1,5 @@
 #! /bin/sh
-
-
+echo "I am starting .."
 export LIBS=/app/JaegerTutorial/libs
 export APP=com.github.ganeshgowtham.jaeger.BootstrapPaymentApplication
 export LOG_DIR=${APP_HOME}/logs
