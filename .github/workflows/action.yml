@@ -1,0 +1,13 @@
+name: 'Upload a Build Artifact'
+description: 'Upload a build artifact that can be used by subsequent workflow steps'
+author: 'GitHub'
+inputs: 
+  name:
+    description: 'Artifact name'
+    required: true
+  path:
+    description: 'Directory containing files to upload'
+    required: true
+runs:
+  # Plugins live on the runner and are only available to a certain set of first party actions.
+  plugin: 'publish'
